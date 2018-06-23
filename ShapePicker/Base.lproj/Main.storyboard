@@ -90,6 +90,9 @@
                                 <rect key="frame" x="20" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Undo"/>
+                                <connections>
+                                    <action selector="undoTapped" destination="R0g-gg-1zB" eventType="touchUpInside" id="do4-IJ-x5m"/>
+                                </connections>
                             </button>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" style="plain" id="5go-WD-ccP">

@@ -7,18 +7,20 @@
 //
 
 import UIKit
-class ShapeView : UIView {
+class ShapeView: UIView, Plottable {
 
+    var position: Position = Position(relativeX: 0, relativeY: 0)
     var shapeLayer: CAShapeLayer!
-    var shape: Shape
+    var shape: Shape!
 
-    init(shape: Shape, frame: CGRect) {
+    init(shape: Shape, position: Position, frame: CGRect) {
+        self.position = position
         self.shape = shape
         super.init(frame: frame)
+        self.backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {
-        self.shape = .square
         super.init(coder: aDecoder)
     }
 
