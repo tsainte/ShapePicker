@@ -8,12 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF76F20DE5494001E291D /* AppDelegate.swift */; };
-		F1BBF77220DE5494001E291D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF77120DE5494001E291D /* ViewController.swift */; };
 		F1BBF77520DE5494001E291D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77320DE5494001E291D /* Main.storyboard */; };
 		F1BBF77720DE5495001E291D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77620DE5495001E291D /* Assets.xcassets */; };
 		F1BBF77A20DE5495001E291D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77820DE5495001E291D /* LaunchScreen.storyboard */; };
 		F1BBF78520DE5496001E291D /* ShapePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF78420DE5496001E291D /* ShapePickerTests.swift */; };
 		F1BBF79020DE5496001E291D /* ShapePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF78F20DE5496001E291D /* ShapePickerUITests.swift */; };
+		F1BBF79E20DE6045001E291D /* CanvasViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF79D20DE6045001E291D /* CanvasViewController.swift */; };
+		F1BBF7A220DE60AB001E291D /* CanvasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7A120DE60AB001E291D /* CanvasViewModel.swift */; };
+		F1BBF7A720DE60DF001E291D /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7A620DE60DF001E291D /* StatsViewModel.swift */; };
+		F1BBF7A920DE60F3001E291D /* StatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7A820DE60F3001E291D /* StatsViewController.swift */; };
+		F1BBF7AC20DEA37E001E291D /* ShapeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7AB20DEA37E001E291D /* ShapeView.swift */; };
+		F1BBF7AE20DEAB34001E291D /* ShapeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7AD20DEAB34001E291D /* ShapeFactory.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +41,6 @@
 /* Begin PBXFileReference section */
 		F1BBF76C20DE5493001E291D /* ShapePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BBF76F20DE5494001E291D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F1BBF77120DE5494001E291D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F1BBF77420DE5494001E291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F1BBF77620DE5495001E291D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F1BBF77920DE5495001E291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +51,12 @@
 		F1BBF78B20DE5496001E291D /* ShapePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F1BBF78F20DE5496001E291D /* ShapePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapePickerUITests.swift; sourceTree = "<group>"; };
 		F1BBF79120DE5496001E291D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BBF79D20DE6045001E291D /* CanvasViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewController.swift; sourceTree = "<group>"; };
+		F1BBF7A120DE60AB001E291D /* CanvasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasViewModel.swift; sourceTree = "<group>"; };
+		F1BBF7A620DE60DF001E291D /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
+		F1BBF7A820DE60F3001E291D /* StatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewController.swift; sourceTree = "<group>"; };
+		F1BBF7AB20DEA37E001E291D /* ShapeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeView.swift; sourceTree = "<group>"; };
+		F1BBF7AD20DEAB34001E291D /* ShapeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeFactory.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +107,8 @@
 		F1BBF76E20DE5493001E291D /* ShapePicker */ = {
 			isa = PBXGroup;
 			children = (
+				F1BBF79F20DE6075001E291D /* UI */,
 				F1BBF76F20DE5494001E291D /* AppDelegate.swift */,
-				F1BBF77120DE5494001E291D /* ViewController.swift */,
 				F1BBF77320DE5494001E291D /* Main.storyboard */,
 				F1BBF77620DE5495001E291D /* Assets.xcassets */,
 				F1BBF77820DE5495001E291D /* LaunchScreen.storyboard */,
@@ -123,6 +133,43 @@
 				F1BBF79120DE5496001E291D /* Info.plist */,
 			);
 			path = ShapePickerUITests;
+			sourceTree = "<group>";
+		};
+		F1BBF79F20DE6075001E291D /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF7AA20DEA340001E291D /* Shapes */,
+				F1BBF7A320DE60BB001E291D /* StatsScene */,
+				F1BBF7A020DE6086001E291D /* CanvasScene */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		F1BBF7A020DE6086001E291D /* CanvasScene */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF79D20DE6045001E291D /* CanvasViewController.swift */,
+				F1BBF7A120DE60AB001E291D /* CanvasViewModel.swift */,
+			);
+			path = CanvasScene;
+			sourceTree = "<group>";
+		};
+		F1BBF7A320DE60BB001E291D /* StatsScene */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF7A620DE60DF001E291D /* StatsViewModel.swift */,
+				F1BBF7A820DE60F3001E291D /* StatsViewController.swift */,
+			);
+			path = StatsScene;
+			sourceTree = "<group>";
+		};
+		F1BBF7AA20DEA340001E291D /* Shapes */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF7AB20DEA37E001E291D /* ShapeView.swift */,
+				F1BBF7AD20DEAB34001E291D /* ShapeFactory.swift */,
+			);
+			path = Shapes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -256,8 +303,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F1BBF77220DE5494001E291D /* ViewController.swift in Sources */,
+				F1BBF7A720DE60DF001E291D /* StatsViewModel.swift in Sources */,
+				F1BBF79E20DE6045001E291D /* CanvasViewController.swift in Sources */,
 				F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */,
+				F1BBF7A920DE60F3001E291D /* StatsViewController.swift in Sources */,
+				F1BBF7AC20DEA37E001E291D /* ShapeView.swift in Sources */,
+				F1BBF7A220DE60AB001E291D /* CanvasViewModel.swift in Sources */,
+				F1BBF7AE20DEAB34001E291D /* ShapeFactory.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
