@@ -1,0 +1,583 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF76F20DE5494001E291D /* AppDelegate.swift */; };
+		F1BBF77220DE5494001E291D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF77120DE5494001E291D /* ViewController.swift */; };
+		F1BBF77520DE5494001E291D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77320DE5494001E291D /* Main.storyboard */; };
+		F1BBF77720DE5495001E291D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77620DE5495001E291D /* Assets.xcassets */; };
+		F1BBF77A20DE5495001E291D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1BBF77820DE5495001E291D /* LaunchScreen.storyboard */; };
+		F1BBF78520DE5496001E291D /* ShapePickerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF78420DE5496001E291D /* ShapePickerTests.swift */; };
+		F1BBF79020DE5496001E291D /* ShapePickerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF78F20DE5496001E291D /* ShapePickerUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F1BBF78120DE5496001E291D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1BBF76420DE5493001E291D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1BBF76B20DE5493001E291D;
+			remoteInfo = ShapePicker;
+		};
+		F1BBF78C20DE5496001E291D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F1BBF76420DE5493001E291D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F1BBF76B20DE5493001E291D;
+			remoteInfo = ShapePicker;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		F1BBF76C20DE5493001E291D /* ShapePicker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ShapePicker.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BBF76F20DE5494001E291D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		F1BBF77120DE5494001E291D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		F1BBF77420DE5494001E291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F1BBF77620DE5495001E291D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		F1BBF77920DE5495001E291D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		F1BBF77B20DE5495001E291D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BBF78020DE5496001E291D /* ShapePickerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapePickerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BBF78420DE5496001E291D /* ShapePickerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapePickerTests.swift; sourceTree = "<group>"; };
+		F1BBF78620DE5496001E291D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F1BBF78B20DE5496001E291D /* ShapePickerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShapePickerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F1BBF78F20DE5496001E291D /* ShapePickerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapePickerUITests.swift; sourceTree = "<group>"; };
+		F1BBF79120DE5496001E291D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		F1BBF76920DE5493001E291D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF77D20DE5496001E291D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF78820DE5496001E291D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		F1BBF76320DE5493001E291D = {
+			isa = PBXGroup;
+			children = (
+				F1BBF76E20DE5493001E291D /* ShapePicker */,
+				F1BBF78320DE5496001E291D /* ShapePickerTests */,
+				F1BBF78E20DE5496001E291D /* ShapePickerUITests */,
+				F1BBF76D20DE5493001E291D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		F1BBF76D20DE5493001E291D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF76C20DE5493001E291D /* ShapePicker.app */,
+				F1BBF78020DE5496001E291D /* ShapePickerTests.xctest */,
+				F1BBF78B20DE5496001E291D /* ShapePickerUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		F1BBF76E20DE5493001E291D /* ShapePicker */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF76F20DE5494001E291D /* AppDelegate.swift */,
+				F1BBF77120DE5494001E291D /* ViewController.swift */,
+				F1BBF77320DE5494001E291D /* Main.storyboard */,
+				F1BBF77620DE5495001E291D /* Assets.xcassets */,
+				F1BBF77820DE5495001E291D /* LaunchScreen.storyboard */,
+				F1BBF77B20DE5495001E291D /* Info.plist */,
+			);
+			path = ShapePicker;
+			sourceTree = "<group>";
+		};
+		F1BBF78320DE5496001E291D /* ShapePickerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF78420DE5496001E291D /* ShapePickerTests.swift */,
+				F1BBF78620DE5496001E291D /* Info.plist */,
+			);
+			path = ShapePickerTests;
+			sourceTree = "<group>";
+		};
+		F1BBF78E20DE5496001E291D /* ShapePickerUITests */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF78F20DE5496001E291D /* ShapePickerUITests.swift */,
+				F1BBF79120DE5496001E291D /* Info.plist */,
+			);
+			path = ShapePickerUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		F1BBF76B20DE5493001E291D /* ShapePicker */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BBF79420DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePicker" */;
+			buildPhases = (
+				F1BBF76820DE5493001E291D /* Sources */,
+				F1BBF76920DE5493001E291D /* Frameworks */,
+				F1BBF76A20DE5493001E291D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ShapePicker;
+			productName = ShapePicker;
+			productReference = F1BBF76C20DE5493001E291D /* ShapePicker.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F1BBF77F20DE5496001E291D /* ShapePickerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BBF79720DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePickerTests" */;
+			buildPhases = (
+				F1BBF77C20DE5496001E291D /* Sources */,
+				F1BBF77D20DE5496001E291D /* Frameworks */,
+				F1BBF77E20DE5496001E291D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1BBF78220DE5496001E291D /* PBXTargetDependency */,
+			);
+			name = ShapePickerTests;
+			productName = ShapePickerTests;
+			productReference = F1BBF78020DE5496001E291D /* ShapePickerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		F1BBF78A20DE5496001E291D /* ShapePickerUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F1BBF79A20DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePickerUITests" */;
+			buildPhases = (
+				F1BBF78720DE5496001E291D /* Sources */,
+				F1BBF78820DE5496001E291D /* Frameworks */,
+				F1BBF78920DE5496001E291D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F1BBF78D20DE5496001E291D /* PBXTargetDependency */,
+			);
+			name = ShapePickerUITests;
+			productName = ShapePickerUITests;
+			productReference = F1BBF78B20DE5496001E291D /* ShapePickerUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		F1BBF76420DE5493001E291D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0940;
+				LastUpgradeCheck = 0940;
+				ORGANIZATIONNAME = "Tiago Bencardino";
+				TargetAttributes = {
+					F1BBF76B20DE5493001E291D = {
+						CreatedOnToolsVersion = 9.4.1;
+					};
+					F1BBF77F20DE5496001E291D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = F1BBF76B20DE5493001E291D;
+					};
+					F1BBF78A20DE5496001E291D = {
+						CreatedOnToolsVersion = 9.4.1;
+						TestTargetID = F1BBF76B20DE5493001E291D;
+					};
+				};
+			};
+			buildConfigurationList = F1BBF76720DE5493001E291D /* Build configuration list for PBXProject "ShapePicker" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = F1BBF76320DE5493001E291D;
+			productRefGroup = F1BBF76D20DE5493001E291D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				F1BBF76B20DE5493001E291D /* ShapePicker */,
+				F1BBF77F20DE5496001E291D /* ShapePickerTests */,
+				F1BBF78A20DE5496001E291D /* ShapePickerUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		F1BBF76A20DE5493001E291D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BBF77A20DE5495001E291D /* LaunchScreen.storyboard in Resources */,
+				F1BBF77720DE5495001E291D /* Assets.xcassets in Resources */,
+				F1BBF77520DE5494001E291D /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF77E20DE5496001E291D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF78920DE5496001E291D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		F1BBF76820DE5493001E291D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BBF77220DE5494001E291D /* ViewController.swift in Sources */,
+				F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF77C20DE5496001E291D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BBF78520DE5496001E291D /* ShapePickerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F1BBF78720DE5496001E291D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F1BBF79020DE5496001E291D /* ShapePickerUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F1BBF78220DE5496001E291D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1BBF76B20DE5493001E291D /* ShapePicker */;
+			targetProxy = F1BBF78120DE5496001E291D /* PBXContainerItemProxy */;
+		};
+		F1BBF78D20DE5496001E291D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F1BBF76B20DE5493001E291D /* ShapePicker */;
+			targetProxy = F1BBF78C20DE5496001E291D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		F1BBF77320DE5494001E291D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BBF77420DE5494001E291D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		F1BBF77820DE5495001E291D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				F1BBF77920DE5495001E291D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		F1BBF79220DE5496001E291D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F1BBF79320DE5496001E291D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		F1BBF79520DE5496001E291D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F1BBF79620DE5496001E291D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePicker/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePicker;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		F1BBF79820DE5496001E291D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShapePicker.app/ShapePicker";
+			};
+			name = Debug;
+		};
+		F1BBF79920DE5496001E291D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePickerTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePickerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ShapePicker.app/ShapePicker";
+			};
+			name = Release;
+		};
+		F1BBF79B20DE5496001E291D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShapePicker;
+			};
+			name = Debug;
+		};
+		F1BBF79C20DE5496001E291D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = ShapePickerUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = br.com.mobwiz.ShapePickerUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = ShapePicker;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		F1BBF76720DE5493001E291D /* Build configuration list for PBXProject "ShapePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BBF79220DE5496001E291D /* Debug */,
+				F1BBF79320DE5496001E291D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BBF79420DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePicker" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BBF79520DE5496001E291D /* Debug */,
+				F1BBF79620DE5496001E291D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BBF79720DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePickerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BBF79820DE5496001E291D /* Debug */,
+				F1BBF79920DE5496001E291D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F1BBF79A20DE5496001E291D /* Build configuration list for PBXNativeTarget "ShapePickerUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F1BBF79B20DE5496001E291D /* Debug */,
+				F1BBF79C20DE5496001E291D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = F1BBF76420DE5493001E291D /* Project object */;
+}
