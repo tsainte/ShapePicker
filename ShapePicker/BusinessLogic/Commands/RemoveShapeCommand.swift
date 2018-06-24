@@ -19,7 +19,7 @@ class RemoveShapeCommand: UndoableCommand {
     func execute() {
         delegate?.performRemove(plottableView)
     }
-    
+
     func undo() {
         delegate?.performAdd(plottableView)
     }

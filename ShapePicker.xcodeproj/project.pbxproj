@@ -30,6 +30,9 @@
 		F1BBF7C720DFA7DA001E291D /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */; };
 		F1BBF7C920DFA91B001E291D /* StatsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */; };
 		F1BBF7CB20DFEB17001E291D /* GroupCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7CA20DFEB17001E291D /* GroupCommand.swift */; };
+		F1BBF7CD20DFF48A001E291D /* Int+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7CC20DFF48A001E291D /* Int+Extension.swift */; };
+		F1BBF7D120DFF6C3001E291D /* AddRemoveCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7D020DFF6C3001E291D /* AddRemoveCommandTests.swift */; };
+		F1BBF7D420E00129001E291D /* MoveCommandTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7D320E00129001E291D /* MoveCommandTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +82,9 @@
 		F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewManager.swift; sourceTree = "<group>"; };
 		F1BBF7CA20DFEB17001E291D /* GroupCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCommand.swift; sourceTree = "<group>"; };
+		F1BBF7CC20DFF48A001E291D /* Int+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extension.swift"; sourceTree = "<group>"; };
+		F1BBF7D020DFF6C3001E291D /* AddRemoveCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRemoveCommandTests.swift; sourceTree = "<group>"; };
+		F1BBF7D320E00129001E291D /* MoveCommandTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveCommandTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +150,7 @@
 		F1BBF78320DE5496001E291D /* ShapePickerTests */ = {
 			isa = PBXGroup;
 			children = (
+				F1BBF7D220E00111001E291D /* BusinessLogic */,
 				F1BBF78420DE5496001E291D /* ShapePickerTests.swift */,
 				F1BBF78620DE5496001E291D /* Info.plist */,
 			);
@@ -202,7 +209,6 @@
 			isa = PBXGroup;
 			children = (
 				F1BBF7BB20DEC4D4001E291D /* ShapeCommandsManager.swift */,
-				F1BBF7BD20DEC509001E291D /* MoveTracker.swift */,
 				F1BBF7B020DEBF28001E291D /* Commands */,
 			);
 			path = BusinessLogic;
@@ -225,8 +231,19 @@
 			children = (
 				F1BBF7C420DFA013001E291D /* Position.swift */,
 				F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */,
+				F1BBF7BD20DEC509001E291D /* MoveTracker.swift */,
+				F1BBF7CC20DFF48A001E291D /* Int+Extension.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		F1BBF7D220E00111001E291D /* BusinessLogic */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF7D020DFF6C3001E291D /* AddRemoveCommandTests.swift */,
+				F1BBF7D320E00129001E291D /* MoveCommandTests.swift */,
+			);
+			path = BusinessLogic;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -360,6 +377,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F1BBF7CD20DFF48A001E291D /* Int+Extension.swift in Sources */,
 				F1BBF7A720DE60DF001E291D /* StatsViewModel.swift in Sources */,
 				F1BBF79E20DE6045001E291D /* CanvasViewController.swift in Sources */,
 				F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */,
@@ -386,6 +404,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F1BBF78520DE5496001E291D /* ShapePickerTests.swift in Sources */,
+				F1BBF7D120DFF6C3001E291D /* AddRemoveCommandTests.swift in Sources */,
+				F1BBF7D420E00129001E291D /* MoveCommandTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

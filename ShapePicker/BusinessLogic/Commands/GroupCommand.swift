@@ -17,7 +17,7 @@ class GroupCommand: UndoableCommand {
     func execute() {
         commands.forEach { $0.execute() }
     }
-    
+
     func undo() {
         commands.forEach { $0.undo() }
     }

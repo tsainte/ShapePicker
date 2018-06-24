@@ -11,6 +11,7 @@ import Foundation
 protocol Command {
     func execute()
 }
+
 protocol UndoableCommand: Command {
     func undo()
 }

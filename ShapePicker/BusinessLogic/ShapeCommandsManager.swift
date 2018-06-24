@@ -22,7 +22,7 @@ class ShapeCommandsManager {
 
 // MARK: Actions
 extension ShapeCommandsManager {
-    
+
     func add(_ plottableView: PlottableView) {
         guard let delegate = commandsExecutable else { return }
 

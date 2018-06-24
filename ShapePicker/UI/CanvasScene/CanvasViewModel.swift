@@ -32,19 +32,14 @@ class CanvasViewModel: NSObject {
     init(delegate: CanvasDelegate) {
         self.delegate = delegate
     }
- //todo remove
-    func random(_ range:Range<Int>) -> Int
-    {
-        return range.lowerBound + Int(arc4random_uniform(UInt32(range.upperBound - range.lowerBound)))
-    }
-}
+ }
 
 // MARK: Actions from View Controller
 extension CanvasViewModel {
     func create(shape: Shape, canvasSize: CGSize) {
         let rect = CGRect(x: 0, y: 0, width: 44, height: 44)
-        let position = Position(relativeX: CGFloat(Double(random(10 ..< 90)) / 100),
-                                relativeY: CGFloat(Double(random(10 ..< 90)) / 100))
+        let position = Position(relativeX: CGFloat(Double(Int.random(10 ..< 90)) / 100),
+                                relativeY: CGFloat(Double(Int.random(10 ..< 90)) / 100))
         
         let shapeView = ShapeView(shape: shape, position: position, frame: rect)
         shapeView.center = position.pointExtended(by: canvasSize)
