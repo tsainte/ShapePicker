@@ -20,4 +20,10 @@ class StatsViewController: UIViewController {
     }
 }
 
-extension StatsViewController: StatsViewModelDelegate { }
+extension StatsViewController: StatsViewModelDelegate {
+    func removeCells(at indexPaths: [IndexPath]) {
+        tableView.beginUpdates()
+        tableView.deleteRows(at: indexPaths, with: .fade)
+        tableView.endUpdates()
+    }
+}

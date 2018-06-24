@@ -9,10 +9,12 @@
 import UIKit
 
 @objc protocol CanvasGestureDelegate: class {
-    @objc func move(recognizer: UIPanGestureRecognizer)
+    @objc func move(with recognizer: UIPanGestureRecognizer)
+    func remove(with recognizer: UILongPressGestureRecognizer)
 }
 
 protocol CanvasViewModelDelegate: class {
+    var canvasView: UIView! { get }
     func plot(view: PlottableView)
     func remove(view: PlottableView)
     func move(view: PlottableView, to newPosition: Position)
@@ -47,15 +49,23 @@ extension CanvasViewModel {
         let shapeView = ShapeView(shape: shape, position: position, frame: rect)
         shapeView.center = position.pointExtended(by: canvasSize)
         
-        let recognizer = UIPanGestureRecognizer(target: delegate,
-                                                action: #selector(delegate?.move(recognizer:)))
-        shapeView.addGestureRecognizer(recognizer)
+        let panRecognizer = UIPanGestureRecognizer(target: delegate,
+                                                action: #selector(delegate?.move(with:)))
+        shapeView.addGestureRecognizer(panRecognizer)
+
+        let pressRecognizer = UILongPressGestureRecognizer(target: delegate,
+                                                           action: #selector(delegate?.remove(with:)))
+        shapeView.addGestureRecognizer(pressRecognizer)
         
         shapeCommandsManager.add(shapeView)
     }
 
     func userMoved(shape: PlottableView, from oldPosition: Position, to newPosition: Position) {
         shapeCommandsManager.move(shape, from: oldPosition, to: newPosition)
+    }
+
+    func userRemoved(shape: PlottableView) {
+        shapeCommandsManager.remove(shape)
     }
 
     func undo() {
@@ -87,16 +97,22 @@ extension CanvasViewModel {
 }
 
 extension CanvasViewModel: CommandExecutable {
-    func performAdd(_ shape: PlottableView) {
-        delegate?.plot(view: shape)
+
+    func performAdd(_ plottableView: PlottableView) {
+        delegate?.plot(view: plottableView)
     }
 
-    func performRemove(_ shape: PlottableView) {
-        delegate?.remove(view: shape)
+    func performRemove(_ plottableView: PlottableView) {
+        delegate?.remove(view: plottableView)
+    }
+
+    func performRemoveAll(_ shape: Shape) {
+        guard let canvas = delegate?.canvasView else { return }
+        let removableShapes = shapes(from: canvas).filter { ($0 as? Shapeable)?.shape == shape }
+        shapeCommandsManager.removeAll(removableShapes)
     }
 
     func performMove(on shape: PlottableView, to newPosition: Position) {
         delegate?.move(view: shape, to: newPosition)
     }
-
 }

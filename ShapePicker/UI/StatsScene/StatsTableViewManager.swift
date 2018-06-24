@@ -32,7 +32,7 @@ extension StatsTableViewManager: UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "StatsTableViewCell") as? StatsTableViewCell else {
             fatalError("Can't dequeue correct cell")
         }
-        
+
         let displayModel = viewModel.displayModel(for: indexPath.row)
         cell.configureCell(with: displayModel)
         return cell
@@ -40,5 +40,10 @@ extension StatsTableViewManager: UITableViewDataSource {
 }
 
 extension StatsTableViewManager: UITableViewDelegate {
-
+    // this method handles row deletion
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            viewModel.removeAll(for: indexPath)
+        }
+    }
 }

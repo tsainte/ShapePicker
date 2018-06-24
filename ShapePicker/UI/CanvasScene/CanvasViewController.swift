@@ -42,6 +42,7 @@ class CanvasViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         guard let statsViewController = segue.destination as? StatsViewController else { return }
         let statsViewModel = StatsViewModel(delegate: statsViewController,
+                                            commandExecuter: viewModel,
                                             shapeStats: viewModel.shapeStats(from: canvasView))
         statsViewController.viewModel = statsViewModel
     }
@@ -102,7 +103,7 @@ extension CanvasViewController: CanvasViewModelDelegate {
 }
 
 extension CanvasViewController: CanvasGestureDelegate {
-    func move(recognizer: UIPanGestureRecognizer) {
+    func move(with recognizer: UIPanGestureRecognizer) {
         guard let view = recognizer.view as? PlottableView else { return }
         switch recognizer.state {
         case .began:
@@ -121,6 +122,16 @@ extension CanvasViewController: CanvasGestureDelegate {
             if let initialPosition = initialPosition {
                 viewModel.userMoved(shape: view, from: initialPosition, to: view.position)
             }
+        default:
+            return
+        }
+    }
+
+    func remove(with recognizer: UILongPressGestureRecognizer) {
+        guard let view = recognizer.view as? PlottableView else { return }
+        switch recognizer.state {
+        case .ended:
+            viewModel.userRemoved(shape: view)
         default:
             return
         }

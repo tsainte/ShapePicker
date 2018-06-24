@@ -23,20 +23,29 @@ class ShapeCommandsManager {
 // MARK: Actions
 extension ShapeCommandsManager {
     
-    func add(_ shape: PlottableView) {
+    func add(_ plottableView: PlottableView) {
         guard let delegate = commandsExecutable else { return }
 
-        let addCommand = AddShapeCommand(delegate: delegate, shape: shape)
+        let addCommand = AddShapeCommand(delegate: delegate, plottableView: plottableView)
         addCommand.execute()
         commands.append(addCommand)
     }
 
-    func remove(_ shape: PlottableView) {
+    func remove(_ plottableView: PlottableView) {
         guard let delegate = commandsExecutable else { return }
 
-        let removeCommand = RemoveShapeCommand(delegate: delegate, shape: shape)
+        let removeCommand = RemoveShapeCommand(delegate: delegate, plottableView: plottableView)
         removeCommand.execute()
         commands.append(removeCommand)
+    }
+
+    func removeAll(_ plottableViews: [PlottableView]) {
+        guard let delegate = commandsExecutable else { return }
+        let removeCommands = plottableViews.map { return RemoveShapeCommand(delegate: delegate,
+                                                                            plottableView: $0) }
+        let removeGroupCommand = GroupCommand(commands: removeCommands)
+        removeGroupCommand.execute()
+        commands.append(removeGroupCommand)
     }
 
     func move(_ shape: PlottableView,

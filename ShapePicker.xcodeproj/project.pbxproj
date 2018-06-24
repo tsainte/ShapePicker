@@ -29,6 +29,7 @@
 		F1BBF7C520DFA013001E291D /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C420DFA013001E291D /* Position.swift */; };
 		F1BBF7C720DFA7DA001E291D /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */; };
 		F1BBF7C920DFA91B001E291D /* StatsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */; };
+		F1BBF7CB20DFEB17001E291D /* GroupCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7CA20DFEB17001E291D /* GroupCommand.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +78,7 @@
 		F1BBF7C420DFA013001E291D /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 		F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
 		F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewManager.swift; sourceTree = "<group>"; };
+		F1BBF7CA20DFEB17001E291D /* GroupCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupCommand.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -213,6 +215,7 @@
 				F1BBF7B520DEC004001E291D /* AddShapeCommand.swift */,
 				F1BBF7B720DEC46E001E291D /* RemoveShapeCommand.swift */,
 				F1BBF7B920DEC489001E291D /* MoveShapeCommand.swift */,
+				F1BBF7CA20DFEB17001E291D /* GroupCommand.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				F1BBF7A920DE60F3001E291D /* StatsViewController.swift in Sources */,
 				F1BBF7C720DFA7DA001E291D /* StatsTableViewCell.swift in Sources */,
 				F1BBF7B820DEC46E001E291D /* RemoveShapeCommand.swift in Sources */,
+				F1BBF7CB20DFEB17001E291D /* GroupCommand.swift in Sources */,
 				F1BBF7AC20DEA37E001E291D /* ShapeView.swift in Sources */,
 				F1BBF7A220DE60AB001E291D /* CanvasViewModel.swift in Sources */,
 				F1BBF7C520DFA013001E291D /* Position.swift in Sources */,

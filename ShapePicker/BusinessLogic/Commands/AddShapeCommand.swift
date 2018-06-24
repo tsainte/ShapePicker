@@ -9,22 +9,23 @@
 import Foundation
 
 protocol AddRemoveExecutable: class {
-    func performAdd(_ shape: PlottableView)
-    func performRemove(_ shape: PlottableView)
+    func performAdd(_ plottableView: PlottableView)
+    func performRemove(_ plottableView: PlottableView)
+    func performRemoveAll(_ shape: Shape)
 }
 
 class AddShapeCommand: UndoableCommand {
     weak var delegate: AddRemoveExecutable?
-    let shape: PlottableView
+    let plottableView: PlottableView
 
-    init(delegate: AddRemoveExecutable, shape: PlottableView) {
+    init(delegate: AddRemoveExecutable, plottableView: PlottableView) {
         self.delegate = delegate
-        self.shape = shape
+        self.plottableView = plottableView
     }
     func execute() {
-        delegate?.performAdd(shape)
+        delegate?.performAdd(plottableView)
     }
     func undo() {
-        delegate?.performRemove(shape)
+        delegate?.performRemove(plottableView)
     }
 }
