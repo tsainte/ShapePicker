@@ -10,12 +10,20 @@ import UIKit
 
 class CanvasViewController: UIViewController {
 
-    @IBOutlet weak var canvasView: UIView!
+    @IBOutlet weak var canvasView: UIView! {
+        didSet {
+            canvasView.clipsToBounds = true
+        }
+    }
     @IBOutlet weak var squareButton: UIButton!
     @IBOutlet weak var circleButton: UIButton!
     @IBOutlet weak var triangleButton: UIButton!
 
     lazy var viewModel = CanvasViewModel(delegate: self)
+    var initialPosition: Position?
+    var canvasSize: CGSize {
+        return canvasView.frame.size
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,50 +32,28 @@ class CanvasViewController: UIViewController {
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
-        coordinator.animate(alongsideTransition: { (_) in
-        }) { (_) in
-//            self.positionShape()
+        coordinator.animate(alongsideTransition: nil) { (_) in
+            self.canvasView.subviews.forEach {
+                guard let plottableView = $0 as? PlottableView else { return }
+                plottableView.setNewPosition(plottableView.position,
+                                             relativeTo: self.canvasSize)
+            }
         }
     }
-
-//    func positionShape() {
-//        let relativeX: CGFloat = 0.5
-//        let relativeY: CGFloat = 0.5
-//
-//        shapeView?.center = CGPoint(x: canvasView.frame.size.width * relativeX,
-//                               y: canvasView.frame.size.height * relativeY)
-//    }
-//
-//    func create(shape: Shape) {
-//        self.shapeView?.removeFromSuperview()
-//
-//        let relativeX: CGFloat = 0.5
-//        let relativeY: CGFloat = 0.5
-//
-//        let shapeView = ShapeView(shape: shape,
-//                              frame: CGRect(x: 0,
-//                                        y: 0,
-//                                        width: 44,
-//                                        height: 44))
-//        shapeView.backgroundColor = canvasView.backgroundColor
-//        canvasView.addSubview(shapeView)
-//        self.shapeView = shapeView
-//        positionShape()
-//    }
 }
 
 // MARK: Actions
 extension CanvasViewController {
     @IBAction func addSquareTapped() {
-        viewModel.create(shape: .square)
+        viewModel.create(shape: .square, canvasSize: canvasSize)
     }
 
     @IBAction func addCircleTapped() {
-        viewModel.create(shape: .circle)
+        viewModel.create(shape: .circle, canvasSize: canvasSize)
     }
 
     @IBAction func addTriangleTapped() {
-        viewModel.create(shape: .triangle)
+        viewModel.create(shape: .triangle, canvasSize: canvasSize)
     }
 
     @IBAction func undoTapped() {
@@ -77,11 +63,61 @@ extension CanvasViewController {
 
 extension CanvasViewController: CanvasViewModelDelegate {
 
-    func plot(view: UIView) {
+    func plot(view: PlottableView) {
+        view.alpha = 0
+        UIView.animate(withDuration: 0.25) {
+            view.alpha = 1
+        }
         canvasView.addSubview(view)
     }
 
-    func remove(view: UIView) {
-        view.removeFromSuperview()
+    func remove(view: PlottableView) {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: .curveLinear,
+                       animations: {
+                        view.alpha = 0
+        },
+                       completion: { _ in
+                        view.removeFromSuperview()
+        })
+    }
+
+
+    func move(view: PlottableView, to newPosition: Position) {
+        UIView.animate(withDuration: 0.25,
+                       delay: 0,
+                       options: .curveEaseOut,
+                       animations: {
+                        view.setNewPosition(newPosition, relativeTo: self.canvasView.frame.size)
+        },
+                       completion: nil)
+    }
+
+}
+
+extension CanvasViewController: CanvasGestureDelegate {
+    func move(recognizer: UIPanGestureRecognizer) {
+        guard let view = recognizer.view as? PlottableView else { return }
+        switch recognizer.state {
+        case .began:
+            initialPosition = view.position
+            canvasView.bringSubview(toFront: view)
+        case .changed:
+            let translation = recognizer.translation(in: canvasView)
+            let newCenter = CGPoint(x: view.center.x + translation.x,
+                                    y: view.center.y + translation.y)
+
+            view.setNewPosition(newCenter.positionNormalized(by: canvasSize),
+                                                 relativeTo: canvasSize)
+
+            recognizer.setTranslation(CGPoint.zero, in: canvasView)
+        case .ended:
+            if let initialPosition = initialPosition {
+                viewModel.userMoved(shape: view, from: initialPosition, to: view.position)
+            }
+        default:
+            return
+        }
     }
 }

@@ -9,15 +9,15 @@
 import Foundation
 
 protocol AddRemoveExecutable: class {
-    func performAdd(_ shape: Plottable)
-    func performRemove(_ shape: Plottable)
+    func performAdd(_ shape: PlottableView)
+    func performRemove(_ shape: PlottableView)
 }
 
 class AddShapeCommand: UndoableCommand {
     weak var delegate: AddRemoveExecutable?
-    let shape: Plottable
+    let shape: PlottableView
 
-    init(delegate: AddRemoveExecutable, shape: Plottable) {
+    init(delegate: AddRemoveExecutable, shape: PlottableView) {
         self.delegate = delegate
         self.shape = shape
     }

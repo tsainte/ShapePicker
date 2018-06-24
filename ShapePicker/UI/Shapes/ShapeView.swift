@@ -7,9 +7,10 @@
 //
 
 import UIKit
-class ShapeView: UIView, Plottable {
 
-    var position: Position = Position(relativeX: 0, relativeY: 0)
+class ShapeView: UIView, Plottable, Shapeable {
+
+    var position: Position!
     var shapeLayer: CAShapeLayer!
     var shape: Shape!
 
@@ -17,6 +18,7 @@ class ShapeView: UIView, Plottable {
         self.position = position
         self.shape = shape
         super.init(frame: frame)
+
         self.backgroundColor = .clear
     }
 
@@ -27,5 +29,10 @@ class ShapeView: UIView, Plottable {
     override func draw(_ rect: CGRect) {
         shapeLayer = ShapeFactory.createLayer(at: rect, for: shape)
         layer.addSublayer(shapeLayer)
+    }
+
+    func setNewPosition(_ position: Position, relativeTo size: CGSize) {
+        self.position = position
+        center = position.pointExtended(by: size)
     }
 }

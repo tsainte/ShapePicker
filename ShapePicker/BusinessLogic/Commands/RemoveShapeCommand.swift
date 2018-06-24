@@ -9,15 +9,17 @@
 import Foundation
 class RemoveShapeCommand: UndoableCommand {
     weak var delegate: AddRemoveExecutable?
-    let shape: Plottable
+    let shape: PlottableView
 
-    init(delegate: AddRemoveExecutable, shape: Plottable) {
+    init(delegate: AddRemoveExecutable, shape: PlottableView) {
         self.delegate = delegate
         self.shape = shape
     }
+
     func execute() {
         delegate?.performRemove(shape)
     }
+    
     func undo() {
         delegate?.performAdd(shape)
     }

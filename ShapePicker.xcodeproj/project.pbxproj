@@ -25,6 +25,8 @@
 		F1BBF7BA20DEC489001E291D /* MoveShapeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7B920DEC489001E291D /* MoveShapeCommand.swift */; };
 		F1BBF7BC20DEC4D4001E291D /* ShapeCommandsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7BB20DEC4D4001E291D /* ShapeCommandsManager.swift */; };
 		F1BBF7BE20DEC509001E291D /* MoveTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7BD20DEC509001E291D /* MoveTracker.swift */; };
+		F1BBF7C320DF9F27001E291D /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */; };
+		F1BBF7C520DFA013001E291D /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C420DFA013001E291D /* Position.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -69,6 +71,8 @@
 		F1BBF7B920DEC489001E291D /* MoveShapeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveShapeCommand.swift; sourceTree = "<group>"; };
 		F1BBF7BB20DEC4D4001E291D /* ShapeCommandsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShapeCommandsManager.swift; sourceTree = "<group>"; };
 		F1BBF7BD20DEC509001E291D /* MoveTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTracker.swift; sourceTree = "<group>"; };
+		F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
+		F1BBF7C420DFA013001E291D /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +123,7 @@
 		F1BBF76E20DE5493001E291D /* ShapePicker */ = {
 			isa = PBXGroup;
 			children = (
+				F1BBF7BF20DF9F02001E291D /* Helpers */,
 				F1BBF7AF20DEBF0C001E291D /* BusinessLogic */,
 				F1BBF79F20DE6075001E291D /* UI */,
 				F1BBF76F20DE5494001E291D /* AppDelegate.swift */,
@@ -204,6 +209,15 @@
 				F1BBF7B920DEC489001E291D /* MoveShapeCommand.swift */,
 			);
 			path = Commands;
+			sourceTree = "<group>";
+		};
+		F1BBF7BF20DF9F02001E291D /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				F1BBF7C420DFA013001E291D /* Position.swift */,
+				F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -345,7 +359,9 @@
 				F1BBF7B820DEC46E001E291D /* RemoveShapeCommand.swift in Sources */,
 				F1BBF7AC20DEA37E001E291D /* ShapeView.swift in Sources */,
 				F1BBF7A220DE60AB001E291D /* CanvasViewModel.swift in Sources */,
+				F1BBF7C520DFA013001E291D /* Position.swift in Sources */,
 				F1BBF7AE20DEAB34001E291D /* ShapeFactory.swift in Sources */,
+				F1BBF7C320DF9F27001E291D /* CanvasProtocols.swift in Sources */,
 				F1BBF7BC20DEC4D4001E291D /* ShapeCommandsManager.swift in Sources */,
 				F1BBF7B220DEBF44001E291D /* Command.swift in Sources */,
 				F1BBF7BE20DEC509001E291D /* MoveTracker.swift in Sources */,

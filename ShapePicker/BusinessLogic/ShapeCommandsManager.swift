@@ -6,21 +6,12 @@
 //  Copyright © 2018 Tiago Bencardino. All rights reserved.
 //
 
-import UIKit
-
-typealias NormalizedCGFloat = CGFloat
-
-struct Position {
-    let relativeX: NormalizedCGFloat
-    let relativeY: NormalizedCGFloat
-}
-
-protocol Plottable: class {
-    var position: Position { get }
-}
+import Foundation
 
 typealias CommandExecutable = AddRemoveExecutable & MoveExecutable
+
 class ShapeCommandsManager {
+
     var commands: [UndoableCommand] = []
     weak var commandsExecutable: CommandExecutable?
 
@@ -29,9 +20,10 @@ class ShapeCommandsManager {
     }
 }
 
-//MARK: Actions
+// MARK: Actions
 extension ShapeCommandsManager {
-    func add(_ shape: Plottable) {
+    
+    func add(_ shape: PlottableView) {
         guard let delegate = commandsExecutable else { return }
 
         let addCommand = AddShapeCommand(delegate: delegate, shape: shape)
@@ -39,7 +31,7 @@ extension ShapeCommandsManager {
         commands.append(addCommand)
     }
 
-    func remove(_ shape: Plottable) {
+    func remove(_ shape: PlottableView) {
         guard let delegate = commandsExecutable else { return }
 
         let removeCommand = RemoveShapeCommand(delegate: delegate, shape: shape)
@@ -47,7 +39,7 @@ extension ShapeCommandsManager {
         commands.append(removeCommand)
     }
 
-    func move(_ shape: Plottable,
+    func move(_ shape: PlottableView,
               from oldPosition: Position,
               to newPosition: Position) {
         guard let delegate = commandsExecutable else { return }
