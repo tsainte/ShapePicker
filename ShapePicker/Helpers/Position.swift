@@ -8,6 +8,8 @@
 
 import UIKit
 
+// We're explicity redefining CGFloat to be clear to the user of this API that the value should be normalized.
+// Normalized values are always between 0-1.
 typealias NormalizedCGFloat = CGFloat
 
 struct Position {

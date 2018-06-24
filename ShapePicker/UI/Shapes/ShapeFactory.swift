@@ -8,10 +8,10 @@
 
 import UIKit
 
-enum Shape {
-    case circle
-    case square
-    case triangle
+enum Shape: String {
+    case circle = "Circle"
+    case square = "Square"
+    case triangle = "Triangle"
 }
 
 class ShapeFactory {

@@ -25,6 +25,8 @@ class CanvasViewModel: NSObject {
     weak var delegate: CanvasDelegate?
     lazy var shapeCommandsManager = ShapeCommandsManager(commandsExecutable: self)
 
+    static let animationTime = 0.25
+
     init(delegate: CanvasDelegate) {
         self.delegate = delegate
     }
@@ -35,7 +37,7 @@ class CanvasViewModel: NSObject {
     }
 }
 
-//MARK: Actions from View Controller
+// MARK: Actions from View Controller
 extension CanvasViewModel {
     func create(shape: Shape, canvasSize: CGSize) {
         let rect = CGRect(x: 0, y: 0, width: 44, height: 44)
@@ -58,6 +60,29 @@ extension CanvasViewModel {
 
     func undo() {
         shapeCommandsManager.undo()
+    }
+
+    func shapes(from canvas: UIView) -> [PlottableView] {
+        return canvas.subviews.compactMap { $0 as? PlottableView }
+    }
+
+    func shapeStats(from canvas: UIView) -> [Shape: Int] {
+        let shapes = canvas.subviews.compactMap { $0 as? Shapeable }
+        var counters: [Shape: Int] = [:]
+
+        shapes.forEach {
+            //TODO: Consider change to CaseIterable once Swift 4.2 is available
+            switch $0.shape as Shape {
+            case .circle:
+                counters[.circle] = (counters[.circle] ?? 0) + 1
+            case .square:
+                counters[.square] = (counters[.square] ?? 0) + 1
+            case .triangle:
+                counters[.triangle] = (counters[.triangle] ?? 0) + 1
+            }
+        }
+
+        return counters
     }
 }
 

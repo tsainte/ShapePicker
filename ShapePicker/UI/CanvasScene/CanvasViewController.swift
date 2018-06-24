@@ -27,18 +27,23 @@ class CanvasViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
 
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
         coordinator.animate(alongsideTransition: nil) { (_) in
-            self.canvasView.subviews.forEach {
-                guard let plottableView = $0 as? PlottableView else { return }
-                plottableView.setNewPosition(plottableView.position,
-                                             relativeTo: self.canvasSize)
+            // Reposition centres once view transition
+            self.viewModel.shapes(from: self.canvasView).forEach {
+                $0.setNewPosition($0.position, relativeTo: self.canvasSize)
             }
         }
+    }
+
+    // TODO: consider move to a coordinator class (MVVM-C)
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let statsViewController = segue.destination as? StatsViewController else { return }
+        let statsViewModel = StatsViewModel(delegate: statsViewController,
+                                            shapeStats: viewModel.shapeStats(from: canvasView))
+        statsViewController.viewModel = statsViewModel
     }
 }
 
@@ -65,14 +70,14 @@ extension CanvasViewController: CanvasViewModelDelegate {
 
     func plot(view: PlottableView) {
         view.alpha = 0
-        UIView.animate(withDuration: 0.25) {
+        UIView.animate(withDuration: CanvasViewModel.animationTime) {
             view.alpha = 1
         }
         canvasView.addSubview(view)
     }
 
     func remove(view: PlottableView) {
-        UIView.animate(withDuration: 0.25,
+        UIView.animate(withDuration: CanvasViewModel.animationTime,
                        delay: 0,
                        options: .curveLinear,
                        animations: {
@@ -85,11 +90,11 @@ extension CanvasViewController: CanvasViewModelDelegate {
 
 
     func move(view: PlottableView, to newPosition: Position) {
-        UIView.animate(withDuration: 0.25,
+        UIView.animate(withDuration: CanvasViewModel.animationTime,
                        delay: 0,
                        options: .curveEaseOut,
                        animations: {
-                        view.setNewPosition(newPosition, relativeTo: self.canvasView.frame.size)
+                        view.setNewPosition(newPosition, relativeTo: self.canvasSize)
         },
                        completion: nil)
     }

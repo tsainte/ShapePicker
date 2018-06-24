@@ -27,6 +27,8 @@
 		F1BBF7BE20DEC509001E291D /* MoveTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7BD20DEC509001E291D /* MoveTracker.swift */; };
 		F1BBF7C320DF9F27001E291D /* CanvasProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */; };
 		F1BBF7C520DFA013001E291D /* Position.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C420DFA013001E291D /* Position.swift */; };
+		F1BBF7C720DFA7DA001E291D /* StatsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */; };
+		F1BBF7C920DFA91B001E291D /* StatsTableViewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -73,6 +75,8 @@
 		F1BBF7BD20DEC509001E291D /* MoveTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveTracker.swift; sourceTree = "<group>"; };
 		F1BBF7C220DF9F27001E291D /* CanvasProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CanvasProtocols.swift; sourceTree = "<group>"; };
 		F1BBF7C420DFA013001E291D /* Position.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Position.swift; sourceTree = "<group>"; };
+		F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewCell.swift; sourceTree = "<group>"; };
+		F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsTableViewManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -177,6 +181,8 @@
 			children = (
 				F1BBF7A620DE60DF001E291D /* StatsViewModel.swift */,
 				F1BBF7A820DE60F3001E291D /* StatsViewController.swift */,
+				F1BBF7C620DFA7DA001E291D /* StatsTableViewCell.swift */,
+				F1BBF7C820DFA91B001E291D /* StatsTableViewManager.swift */,
 			);
 			path = StatsScene;
 			sourceTree = "<group>";
@@ -356,12 +362,14 @@
 				F1BBF77020DE5494001E291D /* AppDelegate.swift in Sources */,
 				F1BBF7B620DEC004001E291D /* AddShapeCommand.swift in Sources */,
 				F1BBF7A920DE60F3001E291D /* StatsViewController.swift in Sources */,
+				F1BBF7C720DFA7DA001E291D /* StatsTableViewCell.swift in Sources */,
 				F1BBF7B820DEC46E001E291D /* RemoveShapeCommand.swift in Sources */,
 				F1BBF7AC20DEA37E001E291D /* ShapeView.swift in Sources */,
 				F1BBF7A220DE60AB001E291D /* CanvasViewModel.swift in Sources */,
 				F1BBF7C520DFA013001E291D /* Position.swift in Sources */,
 				F1BBF7AE20DEAB34001E291D /* ShapeFactory.swift in Sources */,
 				F1BBF7C320DF9F27001E291D /* CanvasProtocols.swift in Sources */,
+				F1BBF7C920DFA91B001E291D /* StatsTableViewManager.swift in Sources */,
 				F1BBF7BC20DEC4D4001E291D /* ShapeCommandsManager.swift in Sources */,
 				F1BBF7B220DEBF44001E291D /* Command.swift in Sources */,
 				F1BBF7BE20DEC509001E291D /* MoveTracker.swift in Sources */,
