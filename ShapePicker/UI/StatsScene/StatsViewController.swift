@@ -16,7 +16,9 @@ class StatsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableViewManager = StatsTableViewManager(tableView: tableView, viewModel: viewModel)
+        tableViewManager = StatsTableViewManager(tableView: tableView,
+                                                 dataProvider: viewModel,
+                                                 actionHandler: viewModel)
     }
 }
 

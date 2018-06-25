@@ -8,18 +8,18 @@
 
 import Foundation
 protocol MoveExecutable: class {
-    func performMove(on shape: PlottableView, to newPosition: Position)
+    func performMove(on plottableView: PlottableView, to newPosition: Position)
 }
 
 class MoveShapeCommand: UndoableCommand {
     let tracker: MoveTracker
-    weak var shape: PlottableView?
+    weak var plottableView: PlottableView?
     weak var delegate: MoveExecutable?
 
-    init(tracker: MoveTracker, shape: PlottableView, delegate: MoveExecutable) {
+    init(tracker: MoveTracker, plottableView: PlottableView, delegate: MoveExecutable) {
         self.tracker = tracker
         self.delegate = delegate
-        self.shape = shape
+        self.plottableView = plottableView
     }
 
     // Since the user is executing the command with the recogniser, no need to implement it.
@@ -27,7 +27,7 @@ class MoveShapeCommand: UndoableCommand {
     func execute() { }
 
     func undo() {
-        guard let shape = shape else { return }
-        delegate?.performMove(on: shape, to: tracker.lastPosition)
+        guard let plottableView = plottableView else { return }
+        delegate?.performMove(on: plottableView, to: tracker.lastPosition)
     }
 }

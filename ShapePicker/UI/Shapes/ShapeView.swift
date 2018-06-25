@@ -19,7 +19,8 @@ class ShapeView: UIView, Plottable, Shapeable {
         self.shape = shape
         super.init(frame: frame)
 
-        self.backgroundColor = .clear
+        accessibilityIdentifier = "\(shape.rawValue.lowercased())ShapeView"
+        backgroundColor = .clear
     }
 
     required init?(coder aDecoder: NSCoder) {

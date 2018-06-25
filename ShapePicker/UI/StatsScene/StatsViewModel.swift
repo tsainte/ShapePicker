@@ -20,6 +20,15 @@ struct StatsTableViewCellDisplayModel {
     var count: String
 }
 
+protocol StatsDataProvider: class {
+    var numberOfRows: Int { get }
+    func displayModel(for index: Int) -> StatsTableViewCellDisplayModel
+}
+
+protocol StatsActionHandler: class {
+    func removeAll(for indexPath: IndexPath)
+}
+
 class StatsViewModel: NSObject {
 
     weak var delegate: StatsViewModelDelegate?
@@ -32,7 +41,10 @@ class StatsViewModel: NSObject {
         displayModels = shapeStats.map { return StatsTableViewCellDisplayModel(shape: $0.key,
                                                                                count: String($0.value) )}
     }
+}
 
+// MARK: Data provider for the dataSource
+extension StatsViewModel: StatsDataProvider {
     var numberOfRows: Int {
         return displayModels.count
     }
@@ -43,7 +55,7 @@ class StatsViewModel: NSObject {
 }
 
 // MARK: Actions from the user
-extension StatsViewModel {
+extension StatsViewModel: StatsActionHandler {
     func removeAll(for indexPath: IndexPath) {
         let shape = displayModels[indexPath.row].shape
         commandExecuter?.performRemoveAll(shape)

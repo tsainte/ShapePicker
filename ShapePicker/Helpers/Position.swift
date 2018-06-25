@@ -17,6 +17,12 @@ struct Position {
     let relativeY: NormalizedCGFloat
 }
 
+extension Position: Equatable {
+    static func ==(lhs: Position, rhs: Position) -> Bool {
+        return lhs.relativeX == rhs.relativeX && lhs.relativeY == rhs.relativeY
+    }
+}
+
 extension Position {
     func pointExtended(by size: CGSize) -> CGPoint {
         return CGPoint(x: relativeX * size.width,

@@ -48,14 +48,14 @@ extension ShapeCommandsManager {
         commands.append(removeGroupCommand)
     }
 
-    func move(_ shape: PlottableView,
+    func move(_ plottableView: PlottableView,
               from oldPosition: Position,
               to newPosition: Position) {
         guard let delegate = commandsExecutable else { return }
 
         let tracker = MoveTracker(from: oldPosition, to: newPosition)
 
-        let moveCommand = MoveShapeCommand(tracker: tracker, shape: shape, delegate: delegate)
+        let moveCommand = MoveShapeCommand(tracker: tracker, plottableView: plottableView, delegate: delegate)
         moveCommand.execute()
         commands.append(moveCommand)
     }

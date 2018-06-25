@@ -11,31 +11,31 @@ import UIKit
 class StatsTableViewManager: NSObject {
 
     weak var tableView: UITableView!
-    weak var viewModel: StatsViewModel!
+    weak var dataProvider: StatsDataProvider!
+    weak var actionHandler: StatsActionHandler?
 
-    init(tableView: UITableView, viewModel: StatsViewModel) {
+    init(tableView: UITableView, dataProvider: StatsDataProvider, actionHandler: StatsActionHandler) {
         self.tableView = tableView
-        self.viewModel = viewModel
+        self.dataProvider = dataProvider
+        self.actionHandler = actionHandler
         super.init()
 
         tableView.dataSource = self
+        tableView.delegate = self
     }
 }
 
 extension StatsTableViewManager: UITableViewDataSource {
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        return dataProvider.numberOfRows
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard
-            let cell = tableView.dequeueReusableCell(withIdentifier: "StatsTableViewCell")
-                as? StatsTableViewCell else {
-            fatalError("Can't dequeue correct cell")
-        }
+        let cell = tableView.dequeueReusableCell(withIdentifier: "StatsTableViewCell") as? StatsTableViewCell ??
+            StatsTableViewCell()
 
-        let displayModel = viewModel.displayModel(for: indexPath.row)
+        let displayModel = dataProvider.displayModel(for: indexPath.row)
         cell.configureCell(with: displayModel)
         return cell
     }
@@ -47,7 +47,7 @@ extension StatsTableViewManager: UITableViewDelegate {
                    commit editingStyle: UITableViewCellEditingStyle,
                    forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            viewModel.removeAll(for: indexPath)
+            actionHandler?.removeAll(for: indexPath)
         }
     }
 }

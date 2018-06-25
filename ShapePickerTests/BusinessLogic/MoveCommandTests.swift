@@ -34,7 +34,7 @@ class MoveCommandTests: XCTestCase {
 
     func testMoveExecutes() {
         let moveCommand = MoveShapeCommand(tracker: tracker,
-                                           shape: plottableView,
+                                           plottableView: plottableView,
                                            delegate: mockMove)
         moveCommand.execute()
         XCTAssertEqual(plottableView.position.relativeX, userPosition.relativeX)
@@ -42,7 +42,7 @@ class MoveCommandTests: XCTestCase {
 
     func testMoveUndoes() {
         let moveCommand = MoveShapeCommand(tracker: tracker,
-                                           shape: plottableView,
+                                           plottableView: plottableView,
                                            delegate: mockMove)
         moveCommand.execute()
         moveCommand.undo()
@@ -53,7 +53,7 @@ class MoveCommandTests: XCTestCase {
 
 class MockMoveExecutable: MoveExecutable {
 
-    func performMove(on shape: PlottableView, to newPosition: Position) {
-        shape.setNewPosition(newPosition, relativeTo: .zero)
+    func performMove(on plottableView: PlottableView, to newPosition: Position) {
+        plottableView.setNewPosition(newPosition, relativeTo: .zero)
     }
 }
