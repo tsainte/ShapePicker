@@ -108,7 +108,7 @@ extension CanvasViewController: CanvasGestureDelegate {
         switch recognizer.state {
         case .began:
             initialPosition = view.position
-            canvasView.bringSubview(toFront: view)
+            canvasView.bringSubviewToFront(view)
         case .changed:
             let translation = recognizer.translation(in: canvasView)
             let newCenter = CGPoint(x: view.center.x + translation.x,
